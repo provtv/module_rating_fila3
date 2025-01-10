@@ -6,7 +6,7 @@ namespace Modules\Rating\Filament\Resources\RatingMorphResource\Pages;
 
 use Filament\Pages\Actions;
 use Modules\Rating\Filament\Resources\RatingMorphResource;
-use Modules\Xot\Filament\Pages\XotBaseListRecords;
+use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
 
 class ListRatingMorphs extends XotBaseListRecords
 {
