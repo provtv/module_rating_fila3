@@ -11,6 +11,7 @@
     array (
       'name' => 'Admin',
     ),
+    'label' => 'rating.navigation',
   ),
   'fields' => 
   array (
