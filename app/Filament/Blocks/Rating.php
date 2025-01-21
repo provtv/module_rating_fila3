@@ -11,42 +11,76 @@ use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Toggle;
 use Filament\Forms\Get;
 use Filament\Forms\Set;
 use Modules\UI\Filament\Forms\Components\RadioImage;
 use Modules\Xot\Actions\Filament\Block\GetViewBlocksOptionsByTypeAction;
-use Modules\Xot\Actions\View\GetViewsSiblingsAndSelfAction;
-use Modules\Xot\Datas\XotData;
+use Modules\Rating\Datas\RatingData;
+use Modules\Rating\Enums\SupportedLocale;
+use Illuminate\Support\Facades\App;
 
-class Rating
+class Rating extends Block
 {
-    public static function make(
-        string $name = 'rating',
+    public const BLOCK_TYPE = 'rating';
+
+    /**
+     * Create a new rating block.
+     */
+    public static function create(): Block
+    {
+        return parent::make(static::BLOCK_TYPE)
+            ->schema([
+                TextInput::make('title')
+                    ->label('Titolo')
+                    ->required(),
+                    
+                TextInput::make('description')
+                    ->label('Descrizione'),
+                    
+                Toggle::make('disabled')
+                    ->label('Disabilitato')
+                    ->default(false),
+            ])
+            ->label(function (): string {
+                $locale = App::getLocale();
+                $supportedLocale = SupportedLocale::fromString($locale);
+                return sprintf('Rating (%s)', $supportedLocale->label());
+            });
+    }
+
+    /**
+     * Create rating data from form data.
+     *
+     * @param array<string,mixed> $data
+     */
+    public static function createFromFormData(array $data): RatingData
+    {
+        return RatingData::fromArray($data);
+    }
+
+    /**
+     * Create a new rating block with advanced options.
+     *
+     * @param array<string,mixed> $options
+     */
+    public static function createAdvanced(
+        string $name = self::BLOCK_TYPE,
         string $context = 'form',
+        ?array $options = null
     ): Block {
-        // $view = 'rating::components.blocks.rating.v1';
-        // $views = app(GetViewsSiblingsAndSelfAction::class)->execute($view);
-
-        $options = app(GetViewBlocksOptionsByTypeAction::class)
-            ->execute('rating', true);
-
-        // dddx(get_class_methods(Repeater::class));
-        $primary_lang = XotData::make()->primary_lang;
+        $blockOptions = $options ?? app(GetViewBlocksOptionsByTypeAction::class)
+            ->execute(static::BLOCK_TYPE, true);
 
         return Block::make($name)
             ->schema([
-                // Select::make('view')
-
-                //     ->options($options),
-
                 RadioImage::make('view')
-                    ->options($options),
+                    ->options($blockOptions),
 
                 Repeater::make('ratings')
-                    ->visible(fn (Get $get, $record): bool => $record?->getLocale() === $primary_lang)
+                    ->visible(fn (Get $get): bool => $get('locale') === App::getLocale())
                     ->relationship()
                     ->schema([
-                        // TextInput::make('id')->readonly(),
                         TextInput::make('id')->disabled(),
                         TextInput::make('title')->required(),
                         ColorPicker::make('color'),
@@ -57,31 +91,8 @@ class Rating
                     ->reorderableWithDragAndDrop(true)
                     ->columnSpanFull()
                     ->columns(4)
-                    ->live()
-
-                // ->deleteAction(
-                //     fn(Action $action) => $action->after(fn(Get $get, Set $set) => self::doSomething($get, $set)),
-                //     // function(Action $action){
-                //     //     // return $action->after(fn(Get $get, Set $set) => self::updateTotals($get, $set))
-                //     //     return $action->after(function(Get $get, Set $set){
-                //     //         // dddx([$get, $set]);
-                //     //         dddx($get);
-                //     //     });
-                //     // }
-                // )
-                ,
+                    ->live(),
             ])
-            // ->reorderableWithButtons()
-            // ->addActionLabel('Add member')
-            //
-            // ->columns('form' === $context ? 2 : 1);
             ->columns(1);
     }
-
-    // // https://laraveldaily.com/post/filament-repeater-live-calculations-on-update
-    // public static function doSomething(Get $get, Set $set): void
-    // {
-    //     // dddx(get_defined_vars());
-    //     dddx(get_class_methods($get));
-    // }
 }

@@ -1,20 +1,12 @@
 <?php
 
-/**
- * ---.
- */
-
 declare(strict_types=1);
 
-namespace Modules\Rating\Datas;
+namespace Modules\Rating\DataObjects;
 
 use Spatie\LaravelData\Data;
 use Spatie\LaravelData\Optional;
-use Modules\Rating\Enums\SupportedLocale;
 
-/**
- * Undocumented class.
- */
 class RatingData extends Data
 {
     public function __construct(
@@ -22,7 +14,7 @@ class RatingData extends Data
         public readonly string $description = '',
         public readonly bool $disabled = false,
         public readonly int $position = 0,
-        public readonly SupportedLocale $locale = SupportedLocale::IT,
+        public readonly string $locale = 'it',
         public readonly ?string $image_url = null,
     ) {
     }
@@ -39,8 +31,8 @@ class RatingData extends Data
             description: (string)($data['description'] ?? ''),
             disabled: (bool)($data['disabled'] ?? false),
             position: (int)($data['position'] ?? 0),
-            locale: SupportedLocale::fromString((string)($data['locale'] ?? 'it')),
+            locale: (string)($data['locale'] ?? 'it'),
             image_url: $data['image_url'] ?? null,
         );
     }
-}
+} 
