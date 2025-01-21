@@ -2,37 +2,33 @@
 
 declare(strict_types=1);
 
-namespace Modules\Rating\DataObjects;
+namespace Modules\Rating\App\DataObjects;
 
-use Spatie\LaravelData\Data;
-use Spatie\LaravelData\Optional;
+use InvalidArgumentException;
 
-class RatingData extends Data
+final readonly class RatingData
 {
-    public function __construct(
-        public readonly string $title = '',
-        public readonly string $description = '',
-        public readonly bool $disabled = false,
-        public readonly int $position = 0,
-        public readonly string $locale = 'it',
-        public readonly ?string $image_url = null,
-    ) {
-    }
-
     /**
-     * Create from array with type casting.
-     *
-     * @param array<string,mixed> $data
+     * @param array<string, mixed> $data
      */
     public static function fromArray(array $data): self
     {
         return new self(
-            title: (string)($data['title'] ?? ''),
-            description: (string)($data['description'] ?? ''),
-            disabled: (bool)($data['disabled'] ?? false),
-            position: (int)($data['position'] ?? 0),
-            locale: (string)($data['locale'] ?? 'it'),
-            image_url: $data['image_url'] ?? null,
+            title: $data['title'],
+            score: (int) $data['score'],
+            description: $data['description'] ?? null,
+            userId: $data['user_id'] ?? null
         );
+    }
+
+    public function __construct(
+        public string $title,
+        public int $score,
+        public ?string $description = null,
+        public ?string $userId = null
+    ) {
+        if ($score < 0 || $score > 5) {
+            throw new InvalidArgumentException('Score must be between 0 and 5');
+        }
     }
 } 
