@@ -40,7 +40,7 @@ class ListRatingMorphs extends XotBaseListRecords
                 ->sortable(),
             'updated_at' => Columns\TextColumn::make('updated_at')
                 ->dateTime()
-                ->sortable()
+                ->sortable(),
         ];
     }
 }

@@ -8,10 +8,8 @@ use Filament\Forms\Components\ColorPicker;
 use Filament\Forms\Components\Radio;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Section;
-use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
-use Filament\Forms\Form;
 use Filament\Tables;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
@@ -39,9 +37,9 @@ class RatingResource extends XotBaseResource
             Section::make()
                 ->schema([
                     Toggle::make('is_disabled'),
-                    Toggle::make('is_readonly')
+                    Toggle::make('is_readonly'),
                 ]),
-            RichEditor::make('txt')->columnSpanFull()
+            RichEditor::make('txt')->columnSpanFull(),
         ];
     }
 

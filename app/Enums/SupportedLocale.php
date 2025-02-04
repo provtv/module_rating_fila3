@@ -8,13 +8,13 @@ enum SupportedLocale: string
 {
     case IT = 'it';
     case EN = 'en';
-    
+
     /**
      * Get the human-readable label for the locale
      */
     public function getLabel(): string
     {
-        return match($this) {
+        return match ($this) {
             self::IT => 'Italiano',
             self::EN => 'English',
         };
@@ -22,6 +22,7 @@ enum SupportedLocale: string
 
     /**
      * Get all available locales as array
+     *
      * @return array<string, string>
      */
     public static function toArray(): array
@@ -32,4 +33,4 @@ enum SupportedLocale: string
             []
         );
     }
-} 
+}

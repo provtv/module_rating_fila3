@@ -4,21 +4,18 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Filament\Blocks;
 
-use Filament\Forms\Components\Actions\Action;
 use Filament\Forms\Components\Builder\Block;
 use Filament\Forms\Components\ColorPicker;
 use Filament\Forms\Components\Repeater;
-use Filament\Forms\Components\Select;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Forms\Get;
-use Filament\Forms\Set;
-use Modules\UI\Filament\Forms\Components\RadioImage;
-use Modules\Xot\Actions\Filament\Block\GetViewBlocksOptionsByTypeAction;
+use Illuminate\Support\Facades\App;
 use Modules\Rating\Datas\RatingData;
 use Modules\Rating\Enums\SupportedLocale;
-use Illuminate\Support\Facades\App;
+use Modules\UI\Filament\Forms\Components\RadioImage;
+use Modules\Xot\Actions\Filament\Block\GetViewBlocksOptionsByTypeAction;
 
 class Rating extends Block
 {
@@ -34,10 +31,10 @@ class Rating extends Block
                 TextInput::make('title')
                     ->label('Titolo')
                     ->required(),
-                    
+
                 TextInput::make('description')
                     ->label('Descrizione'),
-                    
+
                 Toggle::make('disabled')
                     ->label('Disabilitato')
                     ->default(false),
@@ -45,6 +42,7 @@ class Rating extends Block
             ->label(function (): string {
                 $locale = App::getLocale();
                 $supportedLocale = SupportedLocale::fromString($locale);
+
                 return sprintf('Rating (%s)', $supportedLocale->label());
             });
     }
@@ -52,7 +50,7 @@ class Rating extends Block
     /**
      * Create rating data from form data.
      *
-     * @param array<string,mixed> $data
+     * @param  array<string,mixed>  $data
      */
     public static function createFromFormData(array $data): RatingData
     {
@@ -62,7 +60,7 @@ class Rating extends Block
     /**
      * Create a new rating block with advanced options.
      *
-     * @param array<string,mixed> $options
+     * @param  array<string,mixed>  $options
      */
     public static function createAdvanced(
         string $name = self::BLOCK_TYPE,

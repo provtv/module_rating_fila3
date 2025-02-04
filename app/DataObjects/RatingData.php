@@ -9,7 +9,7 @@ use InvalidArgumentException;
 final readonly class RatingData
 {
     /**
-     * @param array<string, mixed> $data
+     * @param  array<string, mixed>  $data
      */
     public static function fromArray(array $data): self
     {
@@ -31,4 +31,4 @@ final readonly class RatingData
             throw new InvalidArgumentException('Score must be between 0 and 5');
         }
     }
-} 
+}
