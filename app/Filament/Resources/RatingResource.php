@@ -28,24 +28,21 @@ class RatingResource extends XotBaseResource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
-    public static function form(Form $form): Form
+    public static function getFormSchema(): array
     {
-        return $form
-            ->schema([
-                TextInput::make('extra_attributes.type'),
-                TextInput::make('extra_attributes.anno'),
-                TextInput::make('title')->autofocus()->required(),
-                ColorPicker::make('color'),
-                // TextInput::make('icon')->autofocus()->required(),
-                // Select::make('rule')->options(RuleEnum::class) ,
-                Radio::make('rule')->options(RuleEnum::class),
-                Section::make()
-                    ->schema([
-                        Toggle::make('is_disabled'),
-                        Toggle::make('is_readonly'),
-                    ])->columns(3),
-                RichEditor::make('txt')->columnSpanFull(),
-            ])->columns(3);
+        return [
+            TextInput::make('extra_attributes.type'),
+            TextInput::make('extra_attributes.anno'),
+            TextInput::make('title')->autofocus()->required(),
+            ColorPicker::make('color'),
+            Radio::make('rule')->options(RuleEnum::class),
+            Section::make()
+                ->schema([
+                    Toggle::make('is_disabled'),
+                    Toggle::make('is_readonly')
+                ]),
+            RichEditor::make('txt')->columnSpanFull()
+        ];
     }
 
     /*
