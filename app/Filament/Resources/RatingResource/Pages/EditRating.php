@@ -8,7 +8,7 @@ use Filament\Pages\Actions;
 use Filament\Resources\Pages\EditRecord;
 use Modules\Rating\Filament\Resources\RatingResource;
 
-class EditRating extends EditRecord
+class EditRating extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord
 {
     protected static string $resource = RatingResource::class;
 
