@@ -8,7 +8,7 @@ use Filament\Pages\Actions;
 use Filament\Resources\Pages\EditRecord;
 use Modules\Rating\Filament\Resources\RatingMorphResource;
 
-class EditRatingMorph extends EditRecord
+class EditRatingMorph extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord
 {
     protected static string $resource = RatingMorphResource::class;
 
