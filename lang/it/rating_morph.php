@@ -11,7 +11,7 @@ return [
         'group' => [
             'name' => '',
         ],
-        'label' => 'rating morph.navigation',
+        'label' => 'rating morph',
     ],
     'fields' => [
         'name' => 'Nome',
