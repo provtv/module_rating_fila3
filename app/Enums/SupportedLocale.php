@@ -10,7 +10,7 @@ enum SupportedLocale: string
     case EN = 'en';
 
     /**
-     * Get the human-readable label for the locale
+     * Get the human-readable label for the locale.
      */
     public function getLabel(): string
     {
@@ -21,7 +21,7 @@ enum SupportedLocale: string
     }
 
     /**
-     * Get all available locales as array
+     * Get all available locales as array.
      *
      * @return array<string, string>
      */
