@@ -16,36 +16,13 @@ use Spatie\SchemalessAttributes\Casts\SchemalessAttributes;
  * Modules\Rating\Models\Rating.
  *
  * @property \Spatie\SchemalessAttributes\SchemalessAttributes $extra_attributes
-<<<<<<< HEAD
- * @property RuleEnum $rule
-=======
  * @property RuleEnum                                          $rule
->>>>>>> 9824d3a (.)
  *
  * @method static \Illuminate\Database\Eloquent\Builder|Rating newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Rating newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Rating query()
  * @method static \Illuminate\Database\Eloquent\Builder|Rating withExtraAttributes()
  *
-<<<<<<< HEAD
- * @property int $id
- * @property int $user_id
- * @property float $value
- * @property string|null $related_type
- * @property string|null $created_by
- * @property string|null $updated_by
- * @property string|null $deleted_by
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
- * @property int|null $post_id
- * @property string|null $title
- * @property string|null $color
- * @property string|null $icon
- * @property string|null $txt
- * @property bool|null $is_disabled
- * @property bool|null $is_readonly
- * @property int|null $order_column
-=======
  * @property int                                           $id
  * @property int                                           $user_id
  * @property float                                         $value
@@ -63,7 +40,6 @@ use Spatie\SchemalessAttributes\Casts\SchemalessAttributes;
  * @property bool|null                                     $is_disabled
  * @property bool|null                                     $is_readonly
  * @property int|null                                      $order_column
->>>>>>> 9824d3a (.)
  * @property \Illuminate\Database\Eloquent\Model|\Eloquent $linkedTo
  *
  * @method static \Illuminate\Database\Eloquent\Builder|Rating whereColor($value)
@@ -84,15 +60,9 @@ use Spatie\SchemalessAttributes\Casts\SchemalessAttributes;
  * @method static \Illuminate\Database\Eloquent\Builder|Rating whereUpdatedBy($value)
  *
  * @property \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection<int, \Modules\Media\Models\Media> $media
-<<<<<<< HEAD
- * @property int|null $media_count
- * @property \Modules\Xot\Contracts\ProfileContract|null $creator
- * @property \Modules\Xot\Contracts\ProfileContract|null $updater
-=======
  * @property int|null                                                                                                   $media_count
  * @property \Modules\Xot\Contracts\ProfileContract|null                                                                $creator
  * @property \Modules\Xot\Contracts\ProfileContract|null                                                                $updater
->>>>>>> 9824d3a (.)
  *
  * @mixin \Eloquent
  * @mixin Eloquent

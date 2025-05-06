@@ -27,13 +27,8 @@ class Rating extends Block
      */
     public static function create(): Block
     {
-<<<<<<< HEAD
-        Assert::stringNotEmpty(static::BLOCK_TYPE, 'Block type must be a non-empty string');
-
-=======
         // Ensure we're passing a string to make()
         Assert::stringNotEmpty(static::BLOCK_TYPE, 'Block type must be a non-empty string');
->>>>>>> 9824d3a (.)
         return parent::make(static::BLOCK_TYPE)
             ->schema([
                 TextInput::make('title')
@@ -58,11 +53,7 @@ class Rating extends Block
     /**
      * Create rating data from form data.
      *
-<<<<<<< HEAD
-     * @param  array<string,mixed>  $data
-=======
      * @param array<string,mixed> $data
->>>>>>> 9824d3a (.)
      */
     public static function createFromFormData(array $data): RatingData
     {
@@ -72,33 +63,13 @@ class Rating extends Block
     /**
      * Create a new rating block with advanced options.
      *
-<<<<<<< HEAD
-     * @param  array<string,mixed>  $options
-=======
      * @param array<string,mixed> $options
->>>>>>> 9824d3a (.)
      */
     public static function createAdvanced(
         string $name = self::BLOCK_TYPE,
         string $context = 'form',
         ?array $options = null,
     ): Block {
-<<<<<<< HEAD
-        Assert::stringNotEmpty(static::BLOCK_TYPE, 'Block type must be a non-empty string');
-
-        $blockOptions = $options ?? app(GetViewBlocksOptionsByTypeAction::class)
-            ->execute(static::BLOCK_TYPE, true);
-
-        Assert::isArray($blockOptions, 'Block options must be an array');
-
-        return Block::make($name)
-            ->schema([
-                RadioImage::make('view')
-                    ->options(array_map(
-                        fn ($value) => is_scalar($value) ? (string) $value : '',
-                        $blockOptions
-                    )),
-=======
         // Ensure we're passing a string to execute()
         Assert::stringNotEmpty(static::BLOCK_TYPE, 'Block type must be a non-empty string');
         $blockOptions = $options ?? app(GetViewBlocksOptionsByTypeAction::class)
@@ -108,7 +79,6 @@ class Rating extends Block
             ->schema([
                 RadioImage::make('view')
                     ->options(is_array($blockOptions) ? array_map(fn($value) => is_scalar($value) ? (string)$value : '', $blockOptions) : []),
->>>>>>> 9824d3a (.)
 
                 Repeater::make('ratings')
                     ->visible(fn (Get $get): bool => $get('locale') === App::getLocale())

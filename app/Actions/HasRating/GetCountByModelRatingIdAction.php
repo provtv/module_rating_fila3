@@ -18,11 +18,7 @@ class GetCountByModelRatingIdAction
     {
         $opts = $model->ratings()
             ->wherePivot('user_id', '!=', null);
-<<<<<<< HEAD
-        if ($rating_id !== null) {
-=======
         if (null !== $rating_id) {
->>>>>>> 9824d3a (.)
             $opts = $opts->wherePivot('rating_id', $rating_id);
         }
 
