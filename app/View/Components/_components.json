@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [
     {
         "name": "dashboard.item",
@@ -7,3 +8,6 @@
         "ns": "Modules\\Rating\\View\\Components\\Dashboard\\Item"
     }
 ]
+=======
+[]
+>>>>>>> 9824d3a (.)

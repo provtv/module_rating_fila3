@@ -23,6 +23,7 @@ class ListRatings extends XotBaseListRecords
     public function getListTableColumns(): array
     {
         return [
+<<<<<<< HEAD
             TextColumn::make('id')
                 ->sortable()
                 ->searchable(),
@@ -40,18 +41,46 @@ class ListRatings extends XotBaseListRecords
             IconColumn::make('is_readonly')
                 ->boolean(),
         ];
+=======
+            'id' => TextColumn::make('id')
+                ->sortable()
+                ->searchable(),
+            'title' => TextColumn::make('title')
+                ->sortable()
+                ->searchable(),
+            'rule' => TextColumn::make('rule')
+                ->badge(),
+            'is_disabled' => IconColumn::make('is_disabled')
+                ->boolean(),
+            'is_readonly' => IconColumn::make('is_readonly')
+                ->boolean(),
+        ];
+
+        // TextColumn::make('extra_attributes.type'),
+        // TextColumn::make('extra_attributes.anno'),
+
+        // TextColumn::make('is_readonly'),
+        // TextColumn::make('is_disabled'),
+        // ToggleColumn::make('is_readonly'),
+
+        // TextColumn::make('color'),
+>>>>>>> 9824d3a (.)
     }
 
     public function getTableFilters(): array
     {
         return [
+<<<<<<< HEAD
             // Implementare i filtri necessari
+=======
+>>>>>>> 9824d3a (.)
         ];
     }
 
     public function getTableActions(): array
     {
         return [
+<<<<<<< HEAD
             ViewAction::make()
                 ->label(''),
 
@@ -59,6 +88,13 @@ class ListRatings extends XotBaseListRecords
                 ->label(''),
 
             DeleteAction::make()
+=======
+            'view' => ViewAction::make()
+                ->label(''),
+            'edit' => EditAction::make()
+                ->label(''),
+            'delete' => DeleteAction::make()
+>>>>>>> 9824d3a (.)
                 ->label('')
                 ->requiresConfirmation(),
         ];
@@ -67,16 +103,28 @@ class ListRatings extends XotBaseListRecords
     public function getTableBulkActions(): array
     {
         return [
+<<<<<<< HEAD
             DeleteBulkAction::make(),
+=======
+            'delete' => DeleteBulkAction::make(),
+>>>>>>> 9824d3a (.)
         ];
     }
 
     public function table(Table $table): Table
     {
         return $table
+<<<<<<< HEAD
             ->columns($this->layoutView->getTableColumns())
             ->contentGrid($this->layoutView->getTableContentGrid())
             ->headerActions($this->getTableHeaderActions())
+=======
+            // ->columns($this->getTableColumns())
+            ->columns($this->layoutView->getTableColumns())
+            ->contentGrid($this->layoutView->getTableContentGrid())
+            ->headerActions($this->getTableHeaderActions())
+
+>>>>>>> 9824d3a (.)
             ->filters($this->getTableFilters())
             ->filtersLayout(FiltersLayout::AboveContent)
             ->persistFiltersInSession()

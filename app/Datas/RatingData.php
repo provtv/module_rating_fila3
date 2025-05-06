@@ -23,12 +23,21 @@ class RatingData extends Data
         public readonly int $position = 0,
         public readonly SupportedLocale $locale = SupportedLocale::IT,
         public readonly ?string $image_url = null,
+<<<<<<< HEAD
     ) {}
+=======
+    ) {
+    }
+>>>>>>> 9824d3a (.)
 
     /**
      * Create from array with type casting.
      *
+<<<<<<< HEAD
      * @param  array<string,mixed>  $data
+=======
+     * @param array<string,mixed> $data
+>>>>>>> 9824d3a (.)
      */
     public static function fromArray(array $data): self
     {

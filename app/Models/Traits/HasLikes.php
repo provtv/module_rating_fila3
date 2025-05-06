@@ -20,7 +20,11 @@ trait HasLikes
     /**
      * param \Modules\Xot\Contracts\UserContract|null $user.
      *
+<<<<<<< HEAD
      * @param  \Modules\Xot\Contracts\UserContract|null  $user
+=======
+     * @param \Modules\Xot\Contracts\UserContract|null $user
+>>>>>>> 9824d3a (.)
      */
     public function likedBy($user): void
     {
@@ -32,7 +36,11 @@ trait HasLikes
     /**
      * param \Modules\Xot\Contracts\UserContract|null $user.
      *
+<<<<<<< HEAD
      * @param  \Modules\Xot\Contracts\UserContract|null  $user
+=======
+     * @param \Modules\Xot\Contracts\UserContract|null $user
+>>>>>>> 9824d3a (.)
      */
     public function dislikedBy($user): void
     {
@@ -40,7 +48,11 @@ trait HasLikes
          * @var Like
          */
         $where = $this->likesRelation()->where('user_id', $user->id)->first();
+<<<<<<< HEAD
         if ($where !== null) {
+=======
+        if (null !== $where) {
+>>>>>>> 9824d3a (.)
             $where->delete();
         }
 
@@ -61,7 +73,12 @@ trait HasLikes
     /**
      * param \Modules\Xot\Contracts\UserContract|null $user.
      *
+<<<<<<< HEAD
      * @param  \Modules\Xot\Contracts\UserContract|null  $user
+=======
+     * @param \Modules\Xot\Contracts\UserContract|null $user
+     *
+>>>>>>> 9824d3a (.)
      * @return bool
      */
     public function isLikedBy($user)

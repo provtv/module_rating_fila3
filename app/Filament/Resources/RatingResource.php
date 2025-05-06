@@ -29,6 +29,7 @@ class RatingResource extends XotBaseResource
     public static function getFormSchema(): array
     {
         return [
+<<<<<<< HEAD
             'type' => TextInput::make('extra_attributes.type'),
             'anno' => TextInput::make('extra_attributes.anno'),
             'title' => TextInput::make('title')->autofocus()->required(),
@@ -44,10 +45,27 @@ class RatingResource extends XotBaseResource
     }
 
     /*
+=======
+            TextInput::make('extra_attributes.type'),
+            TextInput::make('extra_attributes.anno'),
+            TextInput::make('title')->autofocus()->required(),
+            ColorPicker::make('color'),
+            Radio::make('rule')->options(RuleEnum::class),
+            Section::make()
+                ->schema([
+                    Toggle::make('is_disabled'),
+                    Toggle::make('is_readonly'),
+                ]),
+            RichEditor::make('txt')->columnSpanFull(),
+        ];
+    }
+
+>>>>>>> 9824d3a (.)
     public static function table(Table $table): Table
     {
         return $table
             ->columns([
+<<<<<<< HEAD
                 TextColumn::make('extra_attributes.type'),
                 TextColumn::make('extra_attributes.anno'),
                 TextColumn::make('title'),
@@ -60,19 +78,42 @@ class RatingResource extends XotBaseResource
                 // TextColumn::make('color'),
             ])
             ->filters([
+=======
+                TextColumn::make('title'),
+                TextColumn::make('type'),
+                TextColumn::make('anno'),
+                ToggleColumn::make('is_disabled'),
+                ToggleColumn::make('is_readonly'),
+                IconColumn::make('color'),
+            ])
+            ->filters([
+                //
+>>>>>>> 9824d3a (.)
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
+<<<<<<< HEAD
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
     */
+=======
+                Tables\Actions\BulkActionGroup::make([
+                    Tables\Actions\DeleteBulkAction::make(),
+                ]),
+            ]);
+    }
+>>>>>>> 9824d3a (.)
 
     public static function getRelations(): array
     {
         return [
+<<<<<<< HEAD
+=======
+            //
+>>>>>>> 9824d3a (.)
         ];
     }
 
