@@ -19,11 +19,7 @@ class GetSumByModelRatingIdAction
     {
         $opts = $model->ratings()
             ->wherePivot('user_id', '!=', null);
-<<<<<<< HEAD
         if (null !== $rating_id) {
-=======
-        if ($rating_id !== null) {
->>>>>>> 34a017e (.)
             $opts = $opts->wherePivot('rating_id', $rating_id);
         }
         $opts = (float) $opts->sum('rating_morph.value');

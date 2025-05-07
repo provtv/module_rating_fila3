@@ -8,20 +8,9 @@ npm-debug.log
 *.phar
 *.lock
 package-lock.json
-<<<<<<< HEAD
-<<<<<<< HEAD
 
 # Backup files
 *.bak
 -e 
 # PHPStan documentation
 docs/phpstan/
-=======
->>>>>>> 34a017e (.)
-=======
-
-# Backup files
-*.bak
-# PHPStan documentation
-docs/phpstan/
->>>>>>> 15cc564 (.)
