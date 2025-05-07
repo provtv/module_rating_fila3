@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Utilizzo di PHPStan nel Progetto <nome progetto>
+=======
+# Utilizzo di PHPStan nel Progetto PTVX
+>>>>>>> 34a017e (.)
 
 ## Esecuzione di PHPStan
 

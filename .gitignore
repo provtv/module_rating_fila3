@@ -34,9 +34,12 @@ node_modules
 docs/cache/
 cache/
 *:Zone.Identifier
+<<<<<<< HEAD
 
 # Backup files
 *.bak
 -e 
 # PHPStan documentation
 docs/phpstan/
+=======
+>>>>>>> 34a017e (.)

@@ -23,7 +23,11 @@ class StatsOverview extends BaseWidget
     protected function getStats(): array
     {
         $stats = [];
+<<<<<<< HEAD
         if (null === $this->record) {
+=======
+        if ($this->record === null) {
+>>>>>>> 34a017e (.)
             return $stats;
         }
         // Assert::isInstanceOf($record=$this->record,HasRatingContract::class);

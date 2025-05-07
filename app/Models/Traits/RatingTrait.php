@@ -81,8 +81,12 @@ trait RatingTrait
     // *
 
     /**
+<<<<<<< HEAD
      * @param float $value
      *
+=======
+     * @param  float  $value
+>>>>>>> 34a017e (.)
      * @return \Illuminate\Support\Collection
      */
     public function getMyRatingAttribute($value)
@@ -97,11 +101,19 @@ trait RatingTrait
      */
     public function getRatingsAvgAttribute(?float $value): ?float
     {
+<<<<<<< HEAD
         if (null !== $value) {
             return $value;
         }
         $value = $this->ratings->avg('pivot.rating');
         if (null !== $value) {
+=======
+        if ($value !== null) {
+            return $value;
+        }
+        $value = $this->ratings->avg('pivot.rating');
+        if ($value !== null) {
+>>>>>>> 34a017e (.)
             $this->ratings_avg = $value;
             $this->save();
         }
@@ -111,7 +123,11 @@ trait RatingTrait
 
     public function getRatingsCountAttribute(?int $value): ?int
     {
+<<<<<<< HEAD
         if (null !== $value) {
+=======
+        if ($value !== null) {
+>>>>>>> 34a017e (.)
             return $value;
         }
         // Method Illuminate\Support\Collection<int,Modules\Rating\Models\Rating>::count() invoked with 1 parameter, 0 required.

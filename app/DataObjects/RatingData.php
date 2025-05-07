@@ -7,7 +7,11 @@ namespace Modules\Rating\DataObjects;
 final readonly class RatingData
 {
     /**
+<<<<<<< HEAD
      * @param array<string, mixed> $data
+=======
+     * @param  array<string, mixed>  $data
+>>>>>>> 34a017e (.)
      */
     public static function fromArray(array $data): self
     {

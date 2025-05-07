@@ -29,6 +29,7 @@ class RatingResource extends XotBaseResource
     public static function getFormSchema(): array
     {
         return [
+<<<<<<< HEAD
             TextInput::make('extra_attributes.type'),
             TextInput::make('extra_attributes.anno'),
             TextInput::make('title')->autofocus()->required(),
@@ -43,10 +44,28 @@ class RatingResource extends XotBaseResource
         ];
     }
 
+=======
+            'type' => TextInput::make('extra_attributes.type'),
+            'anno' => TextInput::make('extra_attributes.anno'),
+            'title' => TextInput::make('title')->autofocus()->required(),
+            'color' => ColorPicker::make('color'),
+            'rule' => Radio::make('rule')->options(RuleEnum::class),
+            'section' => Section::make()
+                ->schema([
+                    'is_disabled' => Toggle::make('is_disabled'),
+                    'is_readonly' => Toggle::make('is_readonly'),
+                ]),
+            'txt' => RichEditor::make('txt')->columnSpanFull(),
+        ];
+    }
+
+    /*
+>>>>>>> 34a017e (.)
     public static function table(Table $table): Table
     {
         return $table
             ->columns([
+<<<<<<< HEAD
                 TextColumn::make('title'),
                 TextColumn::make('type'),
                 TextColumn::make('anno'),
@@ -56,21 +75,45 @@ class RatingResource extends XotBaseResource
             ])
             ->filters([
                 //
+=======
+                TextColumn::make('extra_attributes.type'),
+                TextColumn::make('extra_attributes.anno'),
+                TextColumn::make('title'),
+                TextColumn::make('rule')->badge(),
+                // TextColumn::make('is_readonly'),
+                // TextColumn::make('is_disabled'),
+                // ToggleColumn::make('is_readonly'),
+                IconColumn::make('is_disabled')->boolean(),
+                IconColumn::make('is_readonly')->boolean(),
+                // TextColumn::make('color'),
+            ])
+            ->filters([
+>>>>>>> 34a017e (.)
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
+<<<<<<< HEAD
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
             ]);
     }
+=======
+                Tables\Actions\DeleteBulkAction::make(),
+            ]);
+    }
+    */
+>>>>>>> 34a017e (.)
 
     public static function getRelations(): array
     {
         return [
+<<<<<<< HEAD
             //
+=======
+>>>>>>> 34a017e (.)
         ];
     }
 

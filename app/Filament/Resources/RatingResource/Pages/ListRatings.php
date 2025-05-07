@@ -23,6 +23,7 @@ class ListRatings extends XotBaseListRecords
     public function getListTableColumns(): array
     {
         return [
+<<<<<<< HEAD
             'id' => TextColumn::make('id')
                 ->sortable()
                 ->searchable(),
@@ -45,22 +46,55 @@ class ListRatings extends XotBaseListRecords
         // ToggleColumn::make('is_readonly'),
 
         // TextColumn::make('color'),
+=======
+            TextColumn::make('id')
+                ->sortable()
+                ->searchable(),
+
+            TextColumn::make('title')
+                ->sortable()
+                ->searchable(),
+
+            TextColumn::make('rule')
+                ->badge(),
+
+            IconColumn::make('is_disabled')
+                ->boolean(),
+
+            IconColumn::make('is_readonly')
+                ->boolean(),
+        ];
+>>>>>>> 34a017e (.)
     }
 
     public function getTableFilters(): array
     {
         return [
+<<<<<<< HEAD
+=======
+            // Implementare i filtri necessari
+>>>>>>> 34a017e (.)
         ];
     }
 
     public function getTableActions(): array
     {
         return [
+<<<<<<< HEAD
             'view' => ViewAction::make()
                 ->label(''),
             'edit' => EditAction::make()
                 ->label(''),
             'delete' => DeleteAction::make()
+=======
+            ViewAction::make()
+                ->label(''),
+
+            EditAction::make()
+                ->label(''),
+
+            DeleteAction::make()
+>>>>>>> 34a017e (.)
                 ->label('')
                 ->requiresConfirmation(),
         ];
@@ -69,18 +103,28 @@ class ListRatings extends XotBaseListRecords
     public function getTableBulkActions(): array
     {
         return [
+<<<<<<< HEAD
             'delete' => DeleteBulkAction::make(),
+=======
+            DeleteBulkAction::make(),
+>>>>>>> 34a017e (.)
         ];
     }
 
     public function table(Table $table): Table
     {
         return $table
+<<<<<<< HEAD
             // ->columns($this->getTableColumns())
             ->columns($this->layoutView->getTableColumns())
             ->contentGrid($this->layoutView->getTableContentGrid())
             ->headerActions($this->getTableHeaderActions())
 
+=======
+            ->columns($this->layoutView->getTableColumns())
+            ->contentGrid($this->layoutView->getTableContentGrid())
+            ->headerActions($this->getTableHeaderActions())
+>>>>>>> 34a017e (.)
             ->filters($this->getTableFilters())
             ->filtersLayout(FiltersLayout::AboveContent)
             ->persistFiltersInSession()
