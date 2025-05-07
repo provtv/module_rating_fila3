@@ -17,10 +17,18 @@ use Spatie\SchemalessAttributes\Casts\SchemalessAttributes;
  *
  * @property \Spatie\SchemalessAttributes\SchemalessAttributes $extra_attributes
 <<<<<<< HEAD
+<<<<<<< HEAD
  * @property RuleEnum                                          $rule
 =======
  * @property RuleEnum $rule
 >>>>>>> 34a017e (.)
+=======
+
+ * @property RuleEnum                                          $rule
+
+ * @property RuleEnum $rule
+ 34a017e (.)
+>>>>>>> 15cc564 (.)
  *
  * @method static \Illuminate\Database\Eloquent\Builder|Rating newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Rating newQuery()
@@ -28,6 +36,10 @@ use Spatie\SchemalessAttributes\Casts\SchemalessAttributes;
  * @method static \Illuminate\Database\Eloquent\Builder|Rating withExtraAttributes()
  *
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 15cc564 (.)
  * @property int                                           $id
  * @property int                                           $user_id
  * @property float                                         $value
@@ -45,7 +57,11 @@ use Spatie\SchemalessAttributes\Casts\SchemalessAttributes;
  * @property bool|null                                     $is_disabled
  * @property bool|null                                     $is_readonly
  * @property int|null                                      $order_column
+<<<<<<< HEAD
 =======
+=======
+
+>>>>>>> 15cc564 (.)
  * @property int $id
  * @property int $user_id
  * @property float $value
@@ -63,7 +79,11 @@ use Spatie\SchemalessAttributes\Casts\SchemalessAttributes;
  * @property bool|null $is_disabled
  * @property bool|null $is_readonly
  * @property int|null $order_column
+<<<<<<< HEAD
 >>>>>>> 34a017e (.)
+=======
+ 34a017e (.)
+>>>>>>> 15cc564 (.)
  * @property \Illuminate\Database\Eloquent\Model|\Eloquent $linkedTo
  *
  * @method static \Illuminate\Database\Eloquent\Builder|Rating whereColor($value)
@@ -85,6 +105,7 @@ use Spatie\SchemalessAttributes\Casts\SchemalessAttributes;
  *
  * @property \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection<int, \Modules\Media\Models\Media> $media
 <<<<<<< HEAD
+<<<<<<< HEAD
  * @property int|null                                                                                                   $media_count
  * @property \Modules\Xot\Contracts\ProfileContract|null                                                                $creator
  * @property \Modules\Xot\Contracts\ProfileContract|null                                                                $updater
@@ -93,6 +114,17 @@ use Spatie\SchemalessAttributes\Casts\SchemalessAttributes;
  * @property \Modules\Xot\Contracts\ProfileContract|null $creator
  * @property \Modules\Xot\Contracts\ProfileContract|null $updater
 >>>>>>> 34a017e (.)
+=======
+
+ * @property int|null                                                                                                   $media_count
+ * @property \Modules\Xot\Contracts\ProfileContract|null                                                                $creator
+ * @property \Modules\Xot\Contracts\ProfileContract|null                                                                $updater
+
+ * @property int|null $media_count
+ * @property \Modules\Xot\Contracts\ProfileContract|null $creator
+ * @property \Modules\Xot\Contracts\ProfileContract|null $updater
+ 34a017e (.)
+>>>>>>> 15cc564 (.)
  *
  * @mixin \Eloquent
  * @mixin Eloquent

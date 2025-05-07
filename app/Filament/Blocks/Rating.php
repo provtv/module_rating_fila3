@@ -28,9 +28,14 @@ class Rating extends Block
     public static function create(): Block
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         // Ensure we're passing a string to make()
         Assert::stringNotEmpty(static::BLOCK_TYPE, 'Block type must be a non-empty string');
 =======
+=======
+
+        // Ensure we're passing a string to make()
+>>>>>>> 15cc564 (.)
         Assert::stringNotEmpty(static::BLOCK_TYPE, 'Block type must be a non-empty string');
 
 >>>>>>> 34a017e (.)
@@ -59,10 +64,18 @@ class Rating extends Block
      * Create rating data from form data.
      *
 <<<<<<< HEAD
+<<<<<<< HEAD
      * @param array<string,mixed> $data
 =======
      * @param  array<string,mixed>  $data
 >>>>>>> 34a017e (.)
+=======
+
+     * @param array<string,mixed> $data
+
+     * @param  array<string,mixed>  $data
+ 34a017e (.)
+>>>>>>> 15cc564 (.)
      */
     public static function createFromFormData(array $data): RatingData
     {
@@ -73,16 +86,25 @@ class Rating extends Block
      * Create a new rating block with advanced options.
      *
 <<<<<<< HEAD
+<<<<<<< HEAD
      * @param array<string,mixed> $options
 =======
      * @param  array<string,mixed>  $options
 >>>>>>> 34a017e (.)
+=======
+
+     * @param array<string,mixed> $options
+
+     * @param  array<string,mixed>  $options
+ 34a017e (.)
+>>>>>>> 15cc564 (.)
      */
     public static function createAdvanced(
         string $name = self::BLOCK_TYPE,
         string $context = 'form',
         ?array $options = null,
     ): Block {
+<<<<<<< HEAD
 <<<<<<< HEAD
         // Ensure we're passing a string to execute()
         Assert::stringNotEmpty(static::BLOCK_TYPE, 'Block type must be a non-empty string');
@@ -95,21 +117,26 @@ class Rating extends Block
                     ->options(is_array($blockOptions) ? array_map(fn($value) => is_scalar($value) ? (string)$value : '', $blockOptions) : []),
 =======
         Assert::stringNotEmpty(static::BLOCK_TYPE, 'Block type must be a non-empty string');
+=======
+>>>>>>> 15cc564 (.)
 
+        // Ensure we're passing a string to execute()
+        Assert::stringNotEmpty(static::BLOCK_TYPE, 'Block type must be a non-empty string');
         $blockOptions = $options ?? app(GetViewBlocksOptionsByTypeAction::class)
             ->execute(static::BLOCK_TYPE, true);
-
-        Assert::isArray($blockOptions, 'Block options must be an array');
-
         return Block::make($name)
             ->schema([
                 RadioImage::make('view')
+<<<<<<< HEAD
                     ->options(array_map(
                         fn ($value) => is_scalar($value) ? (string) $value : '',
                         $blockOptions
                     )),
 >>>>>>> 34a017e (.)
 
+=======
+                    ->options(is_array($blockOptions) ? array_map(fn($value) => is_scalar($value) ? (string)$value : '', $blockOptions) : []),
+>>>>>>> 15cc564 (.)
                 Repeater::make('ratings')
                     ->visible(fn (Get $get): bool => $get('locale') === App::getLocale())
                     ->relationship()

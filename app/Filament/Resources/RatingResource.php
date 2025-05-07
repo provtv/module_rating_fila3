@@ -20,15 +20,25 @@ use Modules\Rating\Filament\Resources\RatingResource\Pages;
 use Modules\Rating\Models\Rating;
 use Modules\Xot\Filament\Resources\XotBaseResource;
 
+/**
+ * Resource per la gestione dei rating.
+ * Fornisce l'interfaccia amministrativa per la gestione dei rating nel sistema.
+ */
 class RatingResource extends XotBaseResource
 {
     protected static ?string $model = Rating::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    /**
+     * Ottiene lo schema del form per la creazione e modifica dei rating.
+     *
+     * @return array
+     */
     public static function getFormSchema(): array
     {
         return [
+<<<<<<< HEAD
 <<<<<<< HEAD
             TextInput::make('extra_attributes.type'),
             TextInput::make('extra_attributes.anno'),
@@ -51,14 +61,45 @@ class RatingResource extends XotBaseResource
             'color' => ColorPicker::make('color'),
             'rule' => Radio::make('rule')->options(RuleEnum::class),
             'section' => Section::make()
+=======
+            'type' => TextInput::make('extra_attributes.type')
+                ->label('Tipo')
+                ->required(),
+
+            'anno' => TextInput::make('extra_attributes.anno')
+                ->label('Anno')
+                ->required(),
+
+            'title' => TextInput::make('title')
+                ->label('Titolo')
+                ->autofocus()
+                ->required(),
+
+            'color' => ColorPicker::make('color')
+                ->label('Colore'),
+
+            'rule' => Radio::make('rule')
+                ->label('Regola')
+                ->options(RuleEnum::class)
+                ->required(),
+
+            'section' => Section::make('Impostazioni')
+>>>>>>> 15cc564 (.)
                 ->schema([
-                    'is_disabled' => Toggle::make('is_disabled'),
-                    'is_readonly' => Toggle::make('is_readonly'),
+                    'is_disabled' => Toggle::make('is_disabled')
+                        ->label('Disabilitato'),
+
+                    'is_readonly' => Toggle::make('is_readonly')
+                        ->label('Sola Lettura'),
                 ]),
-            'txt' => RichEditor::make('txt')->columnSpanFull(),
+
+            'txt' => RichEditor::make('txt')
+                ->label('Descrizione')
+                ->columnSpanFull(),
         ];
     }
 
+<<<<<<< HEAD
     /*
 >>>>>>> 34a017e (.)
     public static function table(Table $table): Table
@@ -115,8 +156,23 @@ class RatingResource extends XotBaseResource
 =======
 >>>>>>> 34a017e (.)
         ];
+=======
+    /**
+     * Ottiene le relazioni disponibili per il resource.
+     *
+     * @return array
+     */
+    public static function getRelations(): array
+    {
+        return [];
+>>>>>>> 15cc564 (.)
     }
 
+    /**
+     * Ottiene le pagine disponibili per il resource.
+     *
+     * @return array
+     */
     public static function getPages(): array
     {
         return [

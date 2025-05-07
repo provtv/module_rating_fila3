@@ -1,8 +1,21 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Utilizzo di PHPStan nel Progetto <nome progetto>
 =======
+=======
+
+### Versione HEAD
+
+# Utilizzo di PHPStan nel Progetto <nome progetto>
+
+### Versione Alternativa
+
+>>>>>>> 15cc564 (.)
 # Utilizzo di PHPStan nel Progetto PTVX
 >>>>>>> 34a017e (.)
+
+---
+
 
 ## Esecuzione di PHPStan
 

@@ -199,8 +199,11 @@ return [
         'enabled' => 'Rating attivato con successo',
         'disabled' => 'Rating disattivato con successo',
     ],
+<<<<<<< HEAD
     'exceptions' => [
         'mandatory_data' => '{1} Dato obbligatorio non presente|{2} 2 Dati obbligatori non presenti|{3} 3 Dati obbligatori non presenti|[4,*] Vari dati obbligatori non presenti',
 >>>>>>> 34a017e (.)
     ],
+=======
+>>>>>>> 15cc564 (.)
 ];

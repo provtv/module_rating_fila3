@@ -21,8 +21,14 @@ trait HasLikes
      * param \Modules\Xot\Contracts\UserContract|null $user.
      *
 <<<<<<< HEAD
+<<<<<<< HEAD
      * @param \Modules\Xot\Contracts\UserContract|null $user
 =======
+=======
+
+     * @param \Modules\Xot\Contracts\UserContract|null $user
+
+>>>>>>> 15cc564 (.)
      * @param  \Modules\Xot\Contracts\UserContract|null  $user
 >>>>>>> 34a017e (.)
      */
@@ -37,8 +43,14 @@ trait HasLikes
      * param \Modules\Xot\Contracts\UserContract|null $user.
      *
 <<<<<<< HEAD
+<<<<<<< HEAD
      * @param \Modules\Xot\Contracts\UserContract|null $user
 =======
+=======
+
+     * @param \Modules\Xot\Contracts\UserContract|null $user
+
+>>>>>>> 15cc564 (.)
      * @param  \Modules\Xot\Contracts\UserContract|null  $user
 >>>>>>> 34a017e (.)
      */
@@ -49,8 +61,12 @@ trait HasLikes
          */
         $where = $this->likesRelation()->where('user_id', $user->id)->first();
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (null !== $where) {
 =======
+=======
+
+>>>>>>> 15cc564 (.)
         if ($where !== null) {
 >>>>>>> 34a017e (.)
             $where->delete();
@@ -74,9 +90,16 @@ trait HasLikes
      * param \Modules\Xot\Contracts\UserContract|null $user.
      *
 <<<<<<< HEAD
+<<<<<<< HEAD
      * @param \Modules\Xot\Contracts\UserContract|null $user
      *
 =======
+=======
+
+     * @param \Modules\Xot\Contracts\UserContract|null $user
+     *
+
+>>>>>>> 15cc564 (.)
      * @param  \Modules\Xot\Contracts\UserContract|null  $user
 >>>>>>> 34a017e (.)
      * @return bool

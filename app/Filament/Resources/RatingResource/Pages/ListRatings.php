@@ -16,10 +16,19 @@ use Filament\Tables\Table;
 use Modules\Rating\Filament\Resources\RatingResource;
 use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
 
+/**
+ * Classe per la gestione della lista dei rating.
+ * Estende XotBaseListRecords per fornire funzionalità di base per la visualizzazione dei record.
+ */
 class ListRatings extends XotBaseListRecords
 {
     protected static string $resource = RatingResource::class;
 
+    /**
+     * Ottiene le colonne della tabella per la visualizzazione dei rating.
+     *
+     * @return array
+     */
     public function getListTableColumns(): array
     {
         return [
@@ -49,24 +58,34 @@ class ListRatings extends XotBaseListRecords
 =======
             TextColumn::make('id')
                 ->sortable()
-                ->searchable(),
+                ->searchable()
+                ->label('ID'),
 
             TextColumn::make('title')
                 ->sortable()
-                ->searchable(),
+                ->searchable()
+                ->label('Titolo'),
 
             TextColumn::make('rule')
-                ->badge(),
+                ->badge()
+                ->label('Regola'),
 
             IconColumn::make('is_disabled')
-                ->boolean(),
+                ->boolean()
+                ->label('Disabilitato'),
 
             IconColumn::make('is_readonly')
-                ->boolean(),
+                ->boolean()
+                ->label('Sola Lettura'),
         ];
 >>>>>>> 34a017e (.)
     }
 
+    /**
+     * Ottiene i filtri disponibili per la tabella.
+     *
+     * @return array
+     */
     public function getTableFilters(): array
     {
         return [
@@ -77,6 +96,11 @@ class ListRatings extends XotBaseListRecords
         ];
     }
 
+    /**
+     * Ottiene le azioni disponibili per ogni riga della tabella.
+     *
+     * @return array
+     */
     public function getTableActions(): array
     {
         return [
@@ -88,29 +112,49 @@ class ListRatings extends XotBaseListRecords
             'delete' => DeleteAction::make()
 =======
             ViewAction::make()
-                ->label(''),
+                ->label('Visualizza'),
 
             EditAction::make()
-                ->label(''),
+                ->label('Modifica'),
 
             DeleteAction::make()
+<<<<<<< HEAD
 >>>>>>> 34a017e (.)
                 ->label('')
+=======
+                ->label('Elimina')
+>>>>>>> 15cc564 (.)
                 ->requiresConfirmation(),
         ];
     }
 
+    /**
+     * Ottiene le azioni bulk disponibili per la tabella.
+     *
+     * @return array
+     */
     public function getTableBulkActions(): array
     {
         return [
+<<<<<<< HEAD
 <<<<<<< HEAD
             'delete' => DeleteBulkAction::make(),
 =======
             DeleteBulkAction::make(),
 >>>>>>> 34a017e (.)
+=======
+            DeleteBulkAction::make()
+                ->label('Elimina Selezionati'),
+>>>>>>> 15cc564 (.)
         ];
     }
 
+    /**
+     * Configura la tabella con le impostazioni specifiche.
+     *
+     * @param Table $table
+     * @return Table
+     */
     public function table(Table $table): Table
     {
         return $table

@@ -35,6 +35,7 @@ docs/cache/
 cache/
 *:Zone.Identifier
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 # Backup files
 *.bak
@@ -43,3 +44,10 @@ cache/
 docs/phpstan/
 =======
 >>>>>>> 34a017e (.)
+=======
+
+# Backup files
+*.bak
+# PHPStan documentation
+docs/phpstan/
+>>>>>>> 15cc564 (.)

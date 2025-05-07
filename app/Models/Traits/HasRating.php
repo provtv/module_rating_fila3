@@ -93,8 +93,14 @@ trait HasRating
                 ->where('user_id', '!=', null)
                 ->count();
 <<<<<<< HEAD
+<<<<<<< HEAD
             if (0 === $b) {
 =======
+=======
+
+            if (0 === $b) {
+
+>>>>>>> 15cc564 (.)
             if ($b === 0) {
 >>>>>>> 34a017e (.)
                 $b = 1;
