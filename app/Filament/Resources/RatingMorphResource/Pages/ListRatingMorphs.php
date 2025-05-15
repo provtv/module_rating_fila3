@@ -20,15 +20,7 @@ class ListRatingMorphs extends XotBaseListRecords
         ];
     }
 
-<<<<<<< Updated upstream
-<<<<<<< HEAD
     public function getTableColumns(): array
-=======
-    public function getListTableColumns(): array
->>>>>>> 380edba (.)
-=======
-    public function getTableColumns(): array
->>>>>>> Stashed changes
     {
         return [
             'id' => Columns\TextColumn::make('id')
