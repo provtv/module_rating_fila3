@@ -20,7 +20,11 @@ class ListRatings extends XotBaseListRecords
 {
     protected static string $resource = RatingResource::class;
 
+<<<<<<< HEAD
     public function getTableColumns(): array
+=======
+    public function getListTableColumns(): array
+>>>>>>> 380edba (.)
     {
         return [
             'id' => TextColumn::make('id')
