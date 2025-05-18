@@ -20,6 +20,8 @@ use Modules\Rating\Models\RatingMorph;
  */
 trait HasRating
 {
+
+    //  laravel/Modules/Xot/app/Models/Traits/RelationX.php  poi passare a morphToManyX per standardizzare
     public function ratings(): MorphToMany
     {
         $class = static::class;
