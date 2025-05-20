@@ -4,8 +4,9 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Modules\Xot\Traits\Updater;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 /**
  * Class BaseModel.
@@ -13,6 +14,7 @@ use Modules\Xot\Traits\Updater;
 abstract class BaseModel extends Model
 {
     use Updater;
+    use HasFactory;
 
     /**
      * Indicates whether attributes are snake cased on arrays.
@@ -60,5 +62,15 @@ abstract class BaseModel extends Model
             'created_at' => 'datetime',
             'updated_at' => 'datetime',
         ];
+    }
+
+     /**
+     * Create a new factory instance for the model.
+     *
+     * @return Factory<static>
+     */
+    protected static function newFactory()
+    {
+        return app(\Modules\Xot\Actions\Factory\GetFactoryAction::class)->execute(static::class);
     }
 }
