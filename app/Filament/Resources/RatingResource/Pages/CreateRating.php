@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Filament\Resources\RatingResource\Pages;
 
-use Filament\Resources\Pages\CreateRecord;
 use Modules\Rating\Filament\Resources\RatingResource;
+use Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord;
 
-class CreateRating extends CreateRecord
+class CreateRating extends XotBaseCreateRecord
 {
     protected static string $resource = RatingResource::class;
 
