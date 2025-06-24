@@ -79,6 +79,7 @@ class RatingMorph extends BaseMorphPivot
         'id',
         'model_id', 'model_type',
         'rating_id',
+        'has_yes_no',
         'user_id',
         'note',
         'value',

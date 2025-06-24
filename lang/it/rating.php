@@ -25,6 +25,7 @@ return array (
         'label' => 'Admin',
       ),
     ),
+    'sort' => 33,
   ),
   'fields' => 
   array (
