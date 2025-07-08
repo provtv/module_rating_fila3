@@ -79,7 +79,7 @@ class RatingMorph extends BaseMorphPivot
         'id',
         'model_id', 'model_type',
         'rating_id',
-        'has_yes_no',
+        'has_yes_no', // gia' detto che e' sbagliato qui
         'user_id',
         'note',
         'value',
