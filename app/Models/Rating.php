@@ -99,4 +99,34 @@ class Rating extends BaseModel implements HasMedia
     {
         return $this->morphTo('model');
     }
+
+    /**
+     * Register the conversions that should be performed.
+     *
+     */
+    public function registerMediaConversions(?\Spatie\MediaLibrary\MediaCollections\Models\Media $media = null): void
+    {
+        /*
+        $this
+            ->addMediaConversion('my-conversion')
+            ->greyscale()
+            ->quality(80)
+            ->withResponsiveImages();
+        */
+        $this->addMediaConversion('300x300')
+              ->width(300)
+              ->height(300)
+              ->withResponsiveImages()
+              ->nonQueued();
+        $this->addMediaConversion('150x150')
+              ->width(150)
+              ->height(150)
+              ->withResponsiveImages()
+              ->nonQueued();
+        $this->addMediaConversion('50x50')
+              ->width(150)
+              ->height(150)
+              ->withResponsiveImages()
+              ->nonQueued();
+    }
 }
