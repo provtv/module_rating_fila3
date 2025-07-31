@@ -78,7 +78,7 @@ trait HasRating
             ];
             
             // Use media if it already exists, otherwise don't try to create it
-            $ratings_array[$key]['image'] = $rating->getFirstMediaUrl('rating');
+            $ratings_array[$key]['image'] = method_exists($rating, 'getFirstMediaUrl') ? $rating->getFirstMediaUrl('rating') : null;
             
             // Add SVG icon directly to the array
             $ratings_array[$key]['svg_icon'] = $svgIcons[$key % count($svgIcons)];

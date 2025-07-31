@@ -53,6 +53,9 @@ class ListRatings extends XotBaseListRecords
         ];
     }
 
+    /**
+     * @return array<string, \Filament\Tables\Actions\Action|\Filament\Tables\Actions\ActionGroup>
+     */
     public function getTableActions(): array
     {
         return [
@@ -63,6 +66,16 @@ class ListRatings extends XotBaseListRecords
             'delete' => DeleteAction::make()
                 ->label('')
                 ->requiresConfirmation(),
+        ];
+    }
+
+    /**
+     * @return array<string, \Filament\Tables\Actions\Action|\Filament\Tables\Actions\ActionGroup>
+     */
+    public function getTableHeaderActions(): array
+    {
+        return [
+            // Add header actions here if needed
         ];
     }
 

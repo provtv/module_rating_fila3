@@ -115,18 +115,12 @@ class Rating extends BaseModel implements HasMedia
         */
         $this->addMediaConversion('300x300')
               ->width(300)
-              ->height(300)
-              ->withResponsiveImages()
-              ->nonQueued();
+              ->height(300);
         $this->addMediaConversion('150x150')
-              ->width(150)
-              ->height(150)
-              ->withResponsiveImages()
-              ->nonQueued();
+              ->width(151)
+              ->height(151);
         $this->addMediaConversion('50x50')
               ->width(150)
-              ->height(150)
-              ->withResponsiveImages()
-              ->nonQueued();
+              ->height(150);
     }
 }
