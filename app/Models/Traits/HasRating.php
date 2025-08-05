@@ -34,11 +34,15 @@ trait HasRating
         $pivot_table = $pivot->getTable();
         $pivot_db_name = $pivot->getConnection()->getDatabaseName();
         $pivot_table_full = $pivot_db_name.'.'.$pivot_table;
+<<<<<<< HEAD
         // Filtriamo i campi per escludere quelli che potrebbero non esistere nella tabella base
         $pivot_fields = array_filter($pivot->getFillable(), function($field) {
             // Escludiamo i campi specifici del modulo Predict che non esistono nella tabella base
             return !in_array($field, ['sum_credit_yes', 'sum_credit_no', 'count_credit_yes', 'count_credit_no', 'percentage']);
         });
+=======
+        $pivot_fields = $pivot->getFillable();
+>>>>>>> e3317ed (.)
 
         return $this->morphToMany(Rating::class, 'model', $pivot_table_full)
             ->using($pivot_class)
@@ -78,7 +82,11 @@ trait HasRating
             ];
             
             // Use media if it already exists, otherwise don't try to create it
+<<<<<<< HEAD
             $ratings_array[$key]['image'] = method_exists($rating, 'getFirstMediaUrl') ? $rating->getFirstMediaUrl('rating') : null;
+=======
+            $ratings_array[$key]['image'] = $rating->getFirstMediaUrl('rating');
+>>>>>>> e3317ed (.)
             
             // Add SVG icon directly to the array
             $ratings_array[$key]['svg_icon'] = $svgIcons[$key % count($svgIcons)];

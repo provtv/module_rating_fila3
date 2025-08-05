@@ -53,9 +53,12 @@ class ListRatings extends XotBaseListRecords
         ];
     }
 
+<<<<<<< HEAD
     /**
      * @return array<string, \Filament\Tables\Actions\Action|\Filament\Tables\Actions\ActionGroup>
      */
+=======
+>>>>>>> e3317ed (.)
     public function getTableActions(): array
     {
         return [
@@ -69,6 +72,7 @@ class ListRatings extends XotBaseListRecords
         ];
     }
 
+<<<<<<< HEAD
     /**
      * @return array<string, \Filament\Tables\Actions\Action|\Filament\Tables\Actions\ActionGroup>
      */
@@ -79,6 +83,8 @@ class ListRatings extends XotBaseListRecords
         ];
     }
 
+=======
+>>>>>>> e3317ed (.)
     public function getTableBulkActions(): array
     {
         return [
