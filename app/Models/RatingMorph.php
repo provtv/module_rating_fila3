@@ -85,11 +85,6 @@ class RatingMorph extends BaseMorphPivot
         'value',
         'is_winner',
         'reward',
-<<<<<<< HEAD
-=======
-        'value_buy',
-        'value_sell',
->>>>>>> e3317ed (.)
     ];
     // -------- RELATIONSHIP -----------
 

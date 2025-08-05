@@ -67,11 +67,7 @@ abstract class BaseModel extends Model
      /**
      * Create a new factory instance for the model.
      *
-<<<<<<< HEAD
      * @return \Illuminate\Database\Eloquent\Factories\Factory<static>
-=======
-     * @return Factory<static>
->>>>>>> e3317ed (.)
      */
     protected static function newFactory()
     {
