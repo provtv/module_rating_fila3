@@ -90,14 +90,10 @@ class ListRatings extends XotBaseListRecords
     {
         return $table
             // ->columns($this->getTableColumns())
-<<<<<<< HEAD
             ->columns($this->layoutView->getTableColumns(
                 $this->getTableColumns(),
                 $this->getGridTableColumns()
             ))
-=======
-            ->columns($this->layoutView->getTableColumns())
->>>>>>> c1bfa1f (.)
             ->contentGrid($this->layoutView->getTableContentGrid())
             ->headerActions($this->getTableHeaderActions())
 
