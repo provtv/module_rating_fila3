@@ -47,6 +47,7 @@ class ListRatings extends XotBaseListRecords
         // TextColumn::make('color'),
     }
 
+<<<<<<< HEAD
     public function getTableFilters(): array
     {
         return [
@@ -108,4 +109,7 @@ class ListRatings extends XotBaseListRecords
                 direction: 'DESC',
             );
     }
+=======
+   
+>>>>>>> b1d7f3a (.)
 }
