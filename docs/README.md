@@ -1,98 +1,38 @@
-# Modulo Rating
+# Rating Module Documentation
 
-Il modulo Rating fornisce funzionalità di valutazione per i modelli dell'applicazione. Permette di gestire valutazioni polimorfe con supporto per media e statistiche.
+Rating module for Laraxot PTVX providing specialized functionality and business logic.
 
-## Struttura
+## Quick Reference
 
-Il modulo è composto dai seguenti componenti principali:
+### Core Components
+- **Business Logic**: Core Rating functionality
+- **Data Models**: Rating-specific models and relationships
+- **API Integration**: External service integrations
+- **User Interface**: Filament resources and components
+- **Configuration**: Module settings and options
 
-### Modelli
+## Documentation Structure
 
-- `Rating`: Il modello principale che rappresenta una valutazione
-- `RatingMorph`: Il modello pivot che gestisce le relazioni polimorfe
+1. [Core Functionality](core-functionality.md) - Main business logic
+2. [Data Models](data-models.md) - Models and relationships
+3. [API Integration](api-integration.md) - External integrations
+4. [User Interface](user-interface.md) - Filament components
+5. [Configuration](configuration.md) - Settings and options
+6. [Migration Patterns](migration-patterns.md) - Database patterns
+7. [Best Practices](best-practices.md) - Development guidelines
+8. [Troubleshooting](troubleshooting.md) - Common issues
 
-### Trait
+## Business Logic Focus
 
-- `HasRating`: Fornisce funzionalità di rating per i modelli che lo utilizzano
+- **Domain expertise**: Specialized Rating functionality
+- **Data integrity**: Robust data validation and storage
+- **Integration**: Seamless system integration
+- **Performance**: Optimized for business requirements
+- **Scalability**: Designed for growth and expansion
 
-## Utilizzo
-
-### Implementazione in un modello
-
-Per aggiungere la funzionalità di rating a un modello, utilizza il trait `HasRating`:
-
-```php
-use Modules\Rating\Models\Traits\HasRating;
-
-class Article extends Model
-{
-    use HasRating;
-    
-    // ... resto del codice
-}
-```
-
-### Aggiungere un rating
+## Quick Start
 
 ```php
-$article->ratings()->attach($ratingId, [
-    'value' => 5,
-    'note' => 'Ottimo articolo!'
-]);
+// Basic usage example
+$result = app(RatingService::class)->process($data);
 ```
-
-### Ottenere le statistiche
-
-```php
-// Ottieni le percentuali di rating per utente
-$percentages = $article->getRatingsPercentageByUser();
-
-// Ottieni le opzioni di rating con titoli
-$options = $article->getOptionRatingsIdTitle();
-
-// Ottieni i rating con immagini
-$ratingsWithImages = $article->getArrayRatingsWithImage();
-```
-
-## Eventi
-
-Il modulo emette i seguenti eventi:
-
-- `rating_created`: Quando viene creato un nuovo rating
-- `rating_updated`: Quando viene aggiornato un rating esistente
-- `rating_deleted`: Quando viene eliminato un rating
-
-## Validazione
-
-I rating devono rispettare le seguenti regole:
-
-- Il valore deve essere un numero compreso tra 1 e 5
-- L'utente deve essere autenticato
-- Il tipo di rating deve essere valido
-- Il commento è opzionale ma non può superare i 1000 caratteri
-
-## Configurazione
-
-Il modulo può essere configurato attraverso il file di configurazione `config/rating.php`:
-
-```php
-return [
-    'min_value' => 1,
-    'max_value' => 5,
-    'max_comment_length' => 1000,
-    'allowed_types' => ['article', 'comment', 'product'],
-];
-```
-
-## Migrazioni
-
-Il modulo include le seguenti migrazioni:
-
-- `create_ratings_table`: Crea la tabella principale dei rating
-- `create_rating_morphs_table`: Crea la tabella pivot per le relazioni polimorfe
-
-## Dipendenze
-
-- Laravel Framework
-- Spatie Media Library
-- Spatie Schemaless Attributes 

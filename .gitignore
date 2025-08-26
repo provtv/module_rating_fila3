@@ -20,6 +20,9 @@ error_log
 *.cache
 *.log
 *.lock
+*.bakup
+*.old
+*.old1
 package-lock.json
 
 node_modules
@@ -37,6 +40,6 @@ cache/
 
 # Backup files
 *.bak
--e 
+
 # PHPStan documentation
 docs/phpstan/
