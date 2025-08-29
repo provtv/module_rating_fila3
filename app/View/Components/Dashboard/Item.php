@@ -13,11 +13,7 @@ use Illuminate\View\Component;
  */
 class Item extends Component
 {
-<<<<<<< HEAD
-    public function render()
-=======
     public function render(): string
->>>>>>> 7908220 (.)
     {
         return '';
     }
