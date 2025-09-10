@@ -20,7 +20,11 @@ trait HasLikes
     /**
      * param \Modules\Xot\Contracts\UserContract|null $user.
      *
+<<<<<<< HEAD
      * @param \Modules\Xot\Contracts\UserContract|null $user
+=======
+     * @param  \Modules\Xot\Contracts\UserContract|null  $user
+>>>>>>> ade9b58 (.)
      */
     public function likedBy($user): void
     {
@@ -32,7 +36,11 @@ trait HasLikes
     /**
      * param \Modules\Xot\Contracts\UserContract|null $user.
      *
+<<<<<<< HEAD
      * @param \Modules\Xot\Contracts\UserContract|null $user
+=======
+     * @param  \Modules\Xot\Contracts\UserContract|null  $user
+>>>>>>> ade9b58 (.)
      */
     public function dislikedBy($user): void
     {
@@ -40,7 +48,11 @@ trait HasLikes
          * @var Like
          */
         $where = $this->likesRelation()->where('user_id', $user->id)->first();
+<<<<<<< HEAD
         if (null !== $where) {
+=======
+        if ($where !== null) {
+>>>>>>> ade9b58 (.)
             $where->delete();
         }
 
@@ -61,8 +73,12 @@ trait HasLikes
     /**
      * param \Modules\Xot\Contracts\UserContract|null $user.
      *
+<<<<<<< HEAD
      * @param \Modules\Xot\Contracts\UserContract|null $user
      *
+=======
+     * @param  \Modules\Xot\Contracts\UserContract|null  $user
+>>>>>>> ade9b58 (.)
      * @return bool
      */
     public function isLikedBy($user)
@@ -78,8 +94,12 @@ trait HasLikes
     protected static function bootHasLikes()
     {
         static::deleting(function ($model): void {
+<<<<<<< HEAD
             $model->likesRelation()->delete();
 
+=======
+            $model->likesRelation()->delete(); /** @phpstan-ignore method.nonObject */
+>>>>>>> ade9b58 (.)
             $model->unsetRelation('likesRelation');
         });
     }

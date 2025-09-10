@@ -5,17 +5,24 @@ namespace Modules\Rating\Tests\Unit;
 use Modules\Rating\Tests\TestCase;
 use Modules\Rating\Models\Rating;
 use Modules\Rating\Models\RatingMorph;
+<<<<<<< HEAD
 use Illuminate\Foundation\Testing\RefreshDatabase;
+=======
+>>>>>>> ade9b58 (.)
 use Modules\Rating\Enums\SupportedLocale;
 use Modules\Rating\Enums\RuleEnum;
 
 class RatingTest extends TestCase
 {
+<<<<<<< HEAD
     use RefreshDatabase;
+=======
+>>>>>>> ade9b58 (.)
 
     public function test_can_create_rating(): void
     {
         $rating = Rating::create([
+<<<<<<< HEAD
             'title' => 'Test Rating',
             'value' => 5,
             'color' => '#FF0000',
@@ -25,19 +32,31 @@ class RatingTest extends TestCase
             'is_disabled' => false,
             'is_readonly' => false,
             'extra_attributes' => ['type' => 'test']
+=======
+            'name' => 'Test Rating',
+            'color' => '#FF0000',
+>>>>>>> ade9b58 (.)
         ]);
 
         $this->assertDatabaseHas('ratings', [
             'id' => $rating->id,
+<<<<<<< HEAD
             'title' => 'Test Rating'
+=======
+            'name' => 'Test Rating'
+>>>>>>> ade9b58 (.)
         ]);
     }
 
     public function test_can_create_rating_morph(): void
     {
         $rating = Rating::create([
+<<<<<<< HEAD
             'title' => 'Test Rating',
             'value' => 5
+=======
+            'name' => 'Test Rating',
+>>>>>>> ade9b58 (.)
         ]);
 
         $ratingMorph = RatingMorph::create([

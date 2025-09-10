@@ -5,16 +5,23 @@ namespace Modules\Rating\Tests\Feature;
 use Modules\Rating\Tests\TestCase;
 use Modules\Rating\Models\Rating;
 use Modules\Rating\Models\RatingMorph;
+<<<<<<< HEAD
 use Illuminate\Foundation\Testing\RefreshDatabase;
+=======
+>>>>>>> ade9b58 (.)
 use Illuminate\Foundation\Testing\WithFaker;
 
 class RatingApiTest extends TestCase
 {
+<<<<<<< HEAD
     use RefreshDatabase, WithFaker;
+=======
+>>>>>>> ade9b58 (.)
 
     public function test_can_list_ratings(): void
     {
         Rating::create([
+<<<<<<< HEAD
             'title' => 'Test Rating 1',
             'value' => 5
         ]);
@@ -22,6 +29,13 @@ class RatingApiTest extends TestCase
         Rating::create([
             'title' => 'Test Rating 2',
             'value' => 4
+=======
+            'name' => 'Test Rating 1',
+        ]);
+
+        Rating::create([
+            'name' => 'Test Rating 2',
+>>>>>>> ade9b58 (.)
         ]);
 
         $response = $this->getJson('/api/ratings');
@@ -32,8 +46,12 @@ class RatingApiTest extends TestCase
                 'data' => [
                     '*' => [
                         'id',
+<<<<<<< HEAD
                         'title',
                         'value',
+=======
+                        'name',
+>>>>>>> ade9b58 (.)
                         'created_at',
                         'updated_at'
                     ]
@@ -44,12 +62,17 @@ class RatingApiTest extends TestCase
     public function test_can_create_rating(): void
     {
         $data = [
+<<<<<<< HEAD
             'title' => 'New Rating',
             'value' => 5,
             'color' => '#00FF00',
             'icon' => 'star',
             'rule' => 'test',
             'txt' => 'Test description'
+=======
+            'name' => 'New Rating',
+            'color' => '#00FF00',
+>>>>>>> ade9b58 (.)
         ];
 
         $response = $this->postJson('/api/ratings', $data);
@@ -57,8 +80,12 @@ class RatingApiTest extends TestCase
         $response->assertStatus(201)
             ->assertJson([
                 'data' => [
+<<<<<<< HEAD
                     'title' => 'New Rating',
                     'value' => 5
+=======
+                    'name' => 'New Rating',
+>>>>>>> ade9b58 (.)
                 ]
             ]);
     }
@@ -66,6 +93,7 @@ class RatingApiTest extends TestCase
     public function test_can_update_rating(): void
     {
         $rating = Rating::create([
+<<<<<<< HEAD
             'title' => 'Test Rating',
             'value' => 5
         ]);
@@ -73,6 +101,13 @@ class RatingApiTest extends TestCase
         $data = [
             'title' => 'Updated Rating',
             'value' => 4
+=======
+            'name' => 'Test Rating',
+        ]);
+
+        $data = [
+            'name' => 'Updated Rating',
+>>>>>>> ade9b58 (.)
         ];
 
         $response = $this->putJson("/api/ratings/{$rating->id}", $data);
@@ -80,8 +115,12 @@ class RatingApiTest extends TestCase
         $response->assertStatus(200)
             ->assertJson([
                 'data' => [
+<<<<<<< HEAD
                     'title' => 'Updated Rating',
                     'value' => 4
+=======
+                    'name' => 'Updated Rating',
+>>>>>>> ade9b58 (.)
                 ]
             ]);
     }
@@ -89,8 +128,12 @@ class RatingApiTest extends TestCase
     public function test_can_delete_rating(): void
     {
         $rating = Rating::create([
+<<<<<<< HEAD
             'title' => 'Test Rating',
             'value' => 5
+=======
+            'name' => 'Test Rating',
+>>>>>>> ade9b58 (.)
         ]);
 
         $response = $this->deleteJson("/api/ratings/{$rating->id}");
@@ -102,8 +145,12 @@ class RatingApiTest extends TestCase
     public function test_can_rate_model(): void
     {
         $rating = Rating::create([
+<<<<<<< HEAD
             'title' => 'Test Rating',
             'value' => 5
+=======
+            'name' => 'Test Rating',
+>>>>>>> ade9b58 (.)
         ]);
 
         $data = [
