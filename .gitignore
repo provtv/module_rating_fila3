@@ -1,50 +1,56 @@
-*.jar
-*.log
-*.lock
-package-lock.json
-*.phar
-.git-rewrite
-.php-cs-fixer.cache
+
+# Dependencies and packages
+node_modules/
 package-lock.json
 vendor/
-node_modules/
-.env
-/.vagrant
+
+# Build and compiled files
+*.cache
+*.jar
+*.lock
+*.phar
+.php-cs-fixer.cache
 .phpunit.result.cache
-.DS_Store
+build/
+
+# Log files
+*.log
 error_log
+
+# Laravel specific
+.env
+
+# Local configurations
+/.vagrant
+
+# IDE specific
 .phpintel
 /.idea
 
+# Git specific
+.git-blame-ignore-revs
+.git-rewrite
+
+# Temporary and system files
 *.stackdump
-*.cache
-*.log
-*.lock
+*:Zone.Identifier
+.DS_Store
+
+# Backup files
+*.backup
+*.backup.*
+*.bak
 *.bakup
 *.old
 *.old1
-package-lock.json
 
+# Documentation and cache
+cache/
+docs/cache/
+docs/phpstan/
+
+# Other
 node_modules
-.git-blame-ignore-revs
 node_modules
 vendor
-.git-blame-ignore-revs
-build/
-vendor/
-build/
 node_modules
-docs/cache/
-cache/
-*:Zone.Identifier
-
-# Backup files
-*.bak
-<<<<<<< HEAD
-=======
-*.backup
-*.backup.*
->>>>>>> ade9b58 (.)
-
-# PHPStan documentation
-docs/phpstan/

@@ -32,19 +32,11 @@ trait HasRating
         $pivot_class = RatingMorph::class;
         $pivot = app($pivot_class);
         $pivot_table = $pivot->getTable();
-<<<<<<< HEAD
-        $pivot_db_name = $pivot->getConnection()->getDatabaseName();
-        $pivot_table_full = $pivot_db_name.'.'.$pivot_table;
-        // Filtriamo i campi per escludere quelli che potrebbero non esistere nella tabella base
-        $pivot_fields = array_filter($pivot->getFillable(), function($field) {
-            // Escludiamo i campi specifici del modulo Predict che non esistono nella tabella base
-=======
        
         $pivot_table_full = $pivot_table;
         
         $pivot_fields = array_filter($pivot->getFillable(), function($field) {
            
->>>>>>> ade9b58 (.)
             return !in_array($field, ['sum_credit_yes', 'sum_credit_no', 'count_credit_yes', 'count_credit_no', 'percentage']);
         });
 
