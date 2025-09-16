@@ -26,6 +26,8 @@ return array (
       ),
     ),
     'sort' => 33,
+    'icon' => 'rating.navigation',
+    'label' => 'rating.navigation',
   ),
   'fields' => 
   array (
