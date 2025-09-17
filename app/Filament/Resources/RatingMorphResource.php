@@ -17,6 +17,10 @@ class RatingMorphResource extends XotBaseResource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+<<<<<<< HEAD
+=======
+    #[\Override]
+>>>>>>> aaced3e (.)
     public static function getFormSchema(): array
     {
         return [
@@ -39,12 +43,20 @@ class RatingMorphResource extends XotBaseResource
             ]);
     }
 
+<<<<<<< HEAD
+=======
+    #[\Override]
+>>>>>>> aaced3e (.)
     public static function getRelations(): array
     {
         return [
         ];
     }
 
+<<<<<<< HEAD
+=======
+    #[\Override]
+>>>>>>> aaced3e (.)
     public static function getPages(): array
     {
         return [

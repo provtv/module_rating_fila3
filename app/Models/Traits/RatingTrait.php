@@ -85,7 +85,11 @@ trait RatingTrait
      *
      * @return \Illuminate\Support\Collection
      */
+<<<<<<< HEAD
     public function getMyRatingAttribute($value)
+=======
+    public function getMyRatingAttribute($_value)
+>>>>>>> aaced3e (.)
     {
         $my = $this->myRatings;
 

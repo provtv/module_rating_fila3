@@ -20,6 +20,10 @@ class ListRatingMorphs extends XotBaseListRecords
         ];
     }
 
+<<<<<<< HEAD
+=======
+    #[\Override]
+>>>>>>> aaced3e (.)
     public function getTableColumns(): array
     {
         return [
