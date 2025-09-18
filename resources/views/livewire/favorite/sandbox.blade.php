@@ -1,4 +1,3 @@
-<div>
     @if ($fav)
         <a class="btn btn-sm btn-soft-primary text-grape rounded-pill mb-3" wire:click="update()"><i
                 class="uil uil-star"></i>&nbsp; Rimuovi dai preferiti

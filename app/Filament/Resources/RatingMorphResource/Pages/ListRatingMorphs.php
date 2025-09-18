@@ -20,12 +20,10 @@ class ListRatingMorphs extends XotBaseListRecords
         ];
     }
 
-<<<<<<< HEAD
-=======
     #[\Override]
->>>>>>> aaced3e (.)
     public function getTableColumns(): array
     {
+        /** @var array<string, \Filament\Tables\Columns\Column> */
         return [
             'id' => Columns\TextColumn::make('id')
                 ->sortable()

@@ -23,16 +23,14 @@ trait RatingTrait
     /**
      * @return \Illuminate\Database\Eloquent\Relations\MorphToMany
      */
-    public function ratings()
-    {
+    public function ratings(): void {
         return $this->morphRelated(Rating::class);
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function ratingObjectives()
-    {
+    public function ratingObjectives(): void {
         $related = Rating::class;
         $user_id = Auth::id();
 
@@ -71,8 +69,7 @@ trait RatingTrait
     /**
      * @return \Illuminate\Database\Eloquent\Relations\MorphToMany
      */
-    public function myRatings()
-    {
+    public function myRatings(): void {
         return $this->morphRelated(Rating::class)
             ->wherePivot('user_id', Auth::id());
     }
@@ -85,12 +82,7 @@ trait RatingTrait
      *
      * @return \Illuminate\Support\Collection
      */
-<<<<<<< HEAD
-    public function getMyRatingAttribute($value)
-=======
-    public function getMyRatingAttribute($_value)
->>>>>>> aaced3e (.)
-    {
+    public function getMyRatingAttribute(): void {
         $my = $this->myRatings;
 
         return $my->pluck('pivot.rating', 'post_id');
@@ -129,7 +121,7 @@ trait RatingTrait
 
     // */
     /*
-        public function setMyRatingAttribute($value){
+        public function setMyRatingAttribute(): void {
         dddx($value);
         }
     */

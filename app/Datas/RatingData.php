@@ -16,14 +16,7 @@ use Spatie\LaravelData\Data;
  */
 class RatingData extends Data
 {
-    public function __construct(
-        public readonly string $title = '',
-        public readonly string $description = '',
-        public readonly bool $disabled = false,
-        public readonly int $position = 0,
-        public readonly SupportedLocale $locale = SupportedLocale::IT,
-        public readonly ?string $image_url = null,
-    ) {
+    public function __construct(): void {
     }
 
     /**

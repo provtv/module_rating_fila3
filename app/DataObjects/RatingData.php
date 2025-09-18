@@ -24,12 +24,7 @@ final readonly class RatingData
         );
     }
 
-    public function __construct(
-        public string $title,
-        public int $score,
-        public ?string $description = null,
-        public ?string $userId = null,
-    ) {
+    public function __construct(): void {
         if ($score < 0 || $score > 5) {
             throw new \InvalidArgumentException('Score must be between 0 and 5');
         }

@@ -1,4 +1,3 @@
-<div>
     <!-- Interested button -->
     <input type="checkbox" class="btn-check d-block" id="Interested{{ $post_id }}"
         @if ($fav) checked @endif wire:click="update()">

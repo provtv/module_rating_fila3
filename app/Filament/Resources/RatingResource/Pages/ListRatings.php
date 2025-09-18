@@ -20,12 +20,10 @@ class ListRatings extends XotBaseListRecords
 {
     protected static string $resource = RatingResource::class;
 
-<<<<<<< HEAD
-=======
     #[\Override]
->>>>>>> aaced3e (.)
     public function getTableColumns(): array
     {
+        /** @var array<string, \Filament\Tables\Columns\Column> */
         return [
             'id' => TextColumn::make('id')
                 ->sortable()

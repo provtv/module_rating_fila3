@@ -1,5 +1,9 @@
 <?php
 
+declare(strict_types=1);
+
+
+
 namespace Modules\Rating\Tests\Unit;
 
 use Modules\Rating\Tests\TestCase;

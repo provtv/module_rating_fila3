@@ -1,4 +1,3 @@
-<div>
     <li>
         <span wire:click="update()">
             <i

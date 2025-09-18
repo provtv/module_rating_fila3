@@ -1,5 +1,9 @@
 <?php
 
+declare(strict_types=1);
+
+
+
 $finder = Symfony\Component\Finder\Finder::create()
     ->in([
         __DIR__ . '/src',
